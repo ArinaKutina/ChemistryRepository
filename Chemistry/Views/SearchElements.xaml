@@ -1,0 +1,24 @@
+﻿<Window x:Class="Chemistry.Views.SearchElements"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chemistry.Views"
+        mc:Ignorable="d"
+        Title="Поиск химических элементов" Height="450" Width="400">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Введите номер элемента" Margin="45 0 0 0" />
+            <TextBox x:Name="SearchElement" Margin="0 0 0 0" Height="25" FontSize="15" Width="315"/>
+            <Button x:Name="Search" Content="Искать" Margin="0 20 0 0" Width="215" Height="30" Click="Search_Click" />
+            <DataGrid x:Name="ElementGrid" Margin="0 40 0 0" Height="130" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path= signElement}" FontSize="10" />
+                    <DataGridTextColumn Binding="{Binding Path= nameElement}" FontSize="10"/>
+                    <DataGridTextColumn Binding="{Binding Path= massElement}" FontSize="10"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="Back" Margin="0 45 0 0" Height="30" Width="320" Content="Вернуться назад" Click="Back_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
